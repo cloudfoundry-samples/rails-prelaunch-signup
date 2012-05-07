@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at
 
-  after_create :send_welcome_email
+  # This can be re-enabled in Cloud Foundry through use of a mail service such as SendGrid
+  #after_create :send_welcome_email
 
   # override Devise method
   # no password is required when the account is created; validate password when the user sets one
