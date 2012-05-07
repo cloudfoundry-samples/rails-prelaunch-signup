@@ -20,3 +20,6 @@ Would you like to deploy from the current directory? [Yn]:
 Application Name: mynewsite
 Application Deployed URL [mynewsite.cloudfoundry.com]:
 ```
+
+### Enabling Email
+The feature that sends a welcome email to new users has been disabled for Cloud Foundry deployment, as you cannot send outbound traffic through the SMTP port.  We recommend using the SendGrid service to send email, and it should be possible to modify this sample to do so.
