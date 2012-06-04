@@ -303,6 +303,27 @@ Application Deployed URL [mynewsite.cloudfoundry.com]:
 
 Cloud Foundry will automatically run @$ rake db:migrate@ to setup your database during staging of the application.
 
+h3. Seeding the Database
+
+Use the vmc rails-console to seed the database once your application is deployed on Cloud Foundry.  Note that memory used while running the console contributes to your overall application memory limit.
+
+<pre>
+vmc rails-console mynewsite
+Deploying tunnel application 'caldecott'.
+Uploading Application:
+  Checking for available resources: OK
+  Packing application: OK
+  Uploading (1K): OK
+Push Status: OK
+Staging Application 'caldecott': OK
+Starting Application 'caldecott': OK
+Connecting to 'mynewsite' console: OK
+
+irb():001:0> `rake db:seed`
+....
+irb():002:0> exit
+</pre>
+
 h3. Enabling Email
 
 The feature that sends a welcome email to new users has been disabled for Cloud Foundry deployment, as you cannot send outbound traffic through the SMTP port.  We recommend using the SendGrid service to send email, and it should be possible to modify this sample to do so.

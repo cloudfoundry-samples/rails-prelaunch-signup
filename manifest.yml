@@ -7,7 +7,7 @@ applications:
         mem: 256M
         description: Rails Application
         exec: 
-    mem: 256M
+    mem: 512M
     instances: 1
     runtime: ruby19
     services: 
